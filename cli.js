@@ -28,6 +28,9 @@ program
             await emitter.clone(projectName);
             console.log('✅ Boilerplate cloné avec succès !\n');
 
+            // 🔹 Génére un sous-domaine unique
+            const customDomain = `${projectName}-tunnel`;
+
             // 📄 Mise à jour du script start.sh
             const startShPath = path.join(projectName, 'start.sh');
             if (fs.existsSync(startShPath)) {
