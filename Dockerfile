@@ -12,9 +12,6 @@ RUN npm install
 # Copie du code source dans le conteneur
 COPY . .
 
-# Charge les variables d'environnement depuis .env si présent
-RUN if [ -f .env ]; then export $(grep -v '^#' .env | xargs); fi
-
 # Permissions d'exécution au script
 RUN chmod +x /app/start.sh
 
