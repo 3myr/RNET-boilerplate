@@ -68,6 +68,13 @@ program
             execSync(`cd ${projectName} && npm install`, { stdio: 'inherit' });
             console.log('✅ Dépendances installées.\n');
 
+            // 🗑 Suppression des fichiers inutiles
+            const cliJsPath = path.join(projectName, 'cli.js');
+            if (fs.existsSync(cliJsPath)) {
+                fs.unlinkSync(cliJsPath);
+                console.log('🗑 Nettoyage des fichiers inutiles.\n');
+            }
+
             console.log(`🎉 Projet "${projectName}" créé avec succès !\n`);
 
             console.log(`📂 Accédez au projet avec : cd ${projectName}`);
