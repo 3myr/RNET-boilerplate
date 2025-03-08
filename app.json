@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "react-native-expo-tailwind-boilerplate",
-    "slug": "react-native-expo-tailwind-boilerplate",
+    "name": "RNET-boilerplate",
+    "slug": "RNET-boilerplate",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

@@ -1,22 +1,26 @@
 {
-  "name": "react-native-expo-tailwind-boilerplate",
+  "name": "RNET-boilerplate",
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "start": "npx expo start --host lan",
+    "android": "npx expo start --android --host lan",
+    "ios": "npx expo start --ios --host lan",
+    "web": "npx expo start --web",
+    "expose": "npx lt --port 8081 --subdomain __TUNNEL_SUBDOMAIN__"
   },
   "dependencies": {
-    "expo": "~52.0.37",
+    "@expo/metro-runtime": "~4.0.1",
+    "@types/react-native": "^0.73.0",
+    "degit": "^2.8.4",
+    "expo": "^52.0.37",
     "expo-status-bar": "~2.0.1",
+    "localtunnel": "^2.0.2",
     "nativewind": "^4.1.23",
     "react": "18.3.1",
-    "react-native": "0.76.7",
     "react-dom": "18.3.1",
-    "react-native-web": "~0.19.13",
-    "@expo/metro-runtime": "~4.0.1"
+    "react-native": "0.76.7",
+    "react-native-web": "~0.19.13"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -24,5 +28,8 @@
     "tailwindcss": "^3.4.17",
     "typescript": "^5.3.3"
   },
-  "private": true
+  "private": true,
+  "bin": {
+    "react-native-expo-tailwind": "./cli.js"
+  }
 }
