@@ -45,6 +45,23 @@ program
                 console.log(`✅ start.sh mis à jour avec le domaine "${customDomain}"\n`);
             }
 
+            // 🔧 Personnalisation du app.json
+            const appJsonPath = path.join(projectName, 'app.json');
+            if (fs.existsSync(appJsonPath)) {
+                console.log('🛠 Mise à jour du app.json...');
+
+                const appJson = JSON.parse(fs.readFileSync(appJsonPath, 'utf-8'));
+
+                // Remplace les valeurs du nom et du slug
+                if (appJson.expo) {
+                    appJson.expo.name = projectName;
+                    appJson.expo.slug = projectName;
+                }
+
+                fs.writeFileSync(appJsonPath, JSON.stringify(appJson, null, 2));
+                console.log('✅ app.json mis à jour.\n');
+            }
+
             // 🔧 Personnalisation du package.json
             const packageJsonPath = path.join(projectName, 'package.json');
             if (fs.existsSync(packageJsonPath)) {

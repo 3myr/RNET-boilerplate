@@ -6,7 +6,7 @@
     "start": "npx expo start --host lan",
     "android": "npx expo start --android --host lan",
     "ios": "npx expo start --ios --host lan",
-    "web": "npx expo start --web",
+    "web": "npx expo start --web --host lan",
     "expose": "npx lt --port 8081 --subdomain __TUNNEL_SUBDOMAIN__"
   },
   "dependencies": {
